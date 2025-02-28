@@ -40,12 +40,12 @@ class HistoryService {
    async addCity(city: string) {
     const cities = await this.read();
     cities.push(city);
-    await this.write(cities
+    await this.write(cities)
    }
   // * BONUS TODO: Define a removeCity method that removes a city from the searchHistory.json file
    async removeCity(id: string) {
     const cities = await this.read();
-    const index = cities.findIndex((city: string) => city.id === id);
+    const index = cities.findIndex((city: string) => city === id);
     if (index !== -1) {
       cities.splice(index, 1);
       await this.write(cities);
