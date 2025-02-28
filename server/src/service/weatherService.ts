@@ -44,6 +44,7 @@ class WeatherService {
       this.cityName = '';
     }
   // TODO: Create fetchLocationData method
+ 
   private async fetchLocationData(query: string) {
     try {
       const response = await axios.get(`${this.baseURL}/geocode`, {
